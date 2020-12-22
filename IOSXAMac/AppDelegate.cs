@@ -1,5 +1,8 @@
 ﻿using Foundation;
 using UIKit;
+using Microsoft.AppCenter.Crashes;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter;
 
 namespace IOSXAMac
 {
@@ -15,6 +18,9 @@ namespace IOSXAMac
         [Export("application:didFinishLaunchingWithOptions:")]
         public bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
+            AppCenter.Start("276868bc-d521-4182-b0ac-ac6f9d8996fb",
+                   typeof(Analytics), typeof(Crashes));
+
             // Override point for customization after application launch.
             // If not required for your application you can safely delete this method
             return true;

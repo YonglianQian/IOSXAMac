@@ -1,4 +1,5 @@
 ﻿using Foundation;
+using Microsoft.AppCenter.Analytics;
 using System;
 using UIKit;
 
@@ -17,6 +18,9 @@ namespace IOSXAMac
             string translatedNumber = "";
 
             TranslateButton.TouchUpInside += (object sender, EventArgs e) => {
+
+                Analytics.TrackEvent("First button is clicked at :" + DateTime.Now.ToLongTimeString());
+
                 // Convert the phone number with text to a number
                 // using PhoneTranslator.cs
                 translatedNumber = PhoneTranslator.ToNumber(

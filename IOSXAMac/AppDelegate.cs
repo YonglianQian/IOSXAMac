@@ -21,6 +21,10 @@ namespace IOSXAMac
             AppCenter.Start("276868bc-d521-4182-b0ac-ac6f9d8996fb",
                    typeof(Analytics), typeof(Crashes));
 
+
+#if ENABLE_TEST_CLOUD
+                Xamarin.Calabash.Start();
+#endif
             // Override point for customization after application launch.
             // If not required for your application you can safely delete this method
             return true;

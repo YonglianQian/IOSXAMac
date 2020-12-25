@@ -32,7 +32,7 @@ namespace IOSXAMacUITest
                 // TODO: Update this path to point to your iOS app and uncomment the
                 // code if the app is not included in the solution.
                 //.AppBundle ("../../../iOS/bin/iPhoneSimulator/Debug/IOSXAMacUITest.iOS.app")
-                //.AppBundle("/Users/abrahamqian/Desktop/Repos/IOSXAMac/IOSXAMac/bin/iPhoneSimulator/Debug/device-builds/iphone 8 plus-14.2/IOSXAMac.app")
+                //.AppBundle("/Users/abrahamqian/Desktop/Repos/IOSXAMac/IOSXAMac/bin/iPhoneSimulator/Release/IOSXAMac.app")
                 .StartApp();
         }
 

@@ -5,6 +5,20 @@ using UIKit;
 
 namespace IOSXAMac
 {
+    public record Person
+    {
+        public string FirstName { get; }
+        public string LastName { get; }
+        public Person(string first, string last) => (FirstName, LastName) = (first, last);
+        public override string ToString()
+        {
+            return $"{FirstName},{LastName}";
+        }
+    }
+
+    /// <summary>
+    /// Segment1, for testing the latest language feature. c#8
+    /// </summary>
     public enum Rainbow
     {
         Red,
@@ -15,7 +29,9 @@ namespace IOSXAMac
         Indigo,
         Violet
     }
-    
+    /// <summary>
+    /// Segment2, for testing the latest language feature. c#8
+    /// </summary>
     public class RGBColor
     {
         public int A { get; set; }
@@ -31,6 +47,11 @@ namespace IOSXAMac
     }
     public partial class ViewController : UIViewController
     {
+        /// <summary>
+        /// Segment3, for testing the latest language feature. c#8
+        /// </summary>
+        /// <param name="colorBand"></param>
+        /// <returns></returns>
         public static RGBColor FromRainbow(Rainbow colorBand) =>
     colorBand switch
     {
@@ -54,10 +75,12 @@ namespace IOSXAMac
             // Perform any additional setup after loading the view, typically from a nib.
             string translatedNumber = "";
 
+            //Segment4, for testing C#8 feature.
             TranslateButton.TouchUpInside += (object sender, EventArgs e) => {
 
                 Analytics.TrackEvent("First button is clicked at :" + DateTime.Now.ToLongTimeString());
-                Analytics.TrackEvent("Custom event name: " + FromRainbow(Rainbow.Indigo).A);
+                Person p = new Person("Abraham", "Qian");
+                Analytics.TrackEvent($"{p.ToString()}: Custom event name: {FromRainbow(Rainbow.Indigo).A}");
                 // Convert the phone number with text to a number
                 // using PhoneTranslator.cs
                 translatedNumber = PhoneTranslator.ToNumber(

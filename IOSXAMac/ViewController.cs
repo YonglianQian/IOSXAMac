@@ -80,7 +80,7 @@ namespace IOSXAMac
 
                 Analytics.TrackEvent("First button is clicked at :" + DateTime.Now.ToLongTimeString());
                 Person p = new Person("Abraham", "Qian");
-                Analytics.TrackEvent($"{p.ToString()}: Custom event name: {FromRainbow(Rainbow.Indigo).A}");
+                Analytics.TrackEvent($"Now: {DateTime.Now.ToLongTimeString()}, {p.ToString()}. {FromRainbow(Rainbow.Indigo).A}");
                 // Convert the phone number with text to a number
                 // using PhoneTranslator.cs
                 translatedNumber = PhoneTranslator.ToNumber(

@@ -5,6 +5,9 @@ using UIKit;
 
 namespace IOSXAMac
 {
+    /// <summary>
+    /// C# 9 feature, here is a record type.
+    /// </summary>
     public record Person
     {
         public string FirstName { get; }
@@ -79,6 +82,7 @@ namespace IOSXAMac
             TranslateButton.TouchUpInside += (object sender, EventArgs e) => {
 
                 Analytics.TrackEvent("First button is clicked at :" + DateTime.Now.ToLongTimeString());
+                //Testing C#9 feature,Here is a record object.
                 Person p = new Person("Abraham", "Qian");
                 Analytics.TrackEvent($"Now: {DateTime.Now.ToLongTimeString()}, {p.ToString()}. {FromRainbow(Rainbow.Indigo).A}");
                 // Convert the phone number with text to a number
